@@ -6,11 +6,12 @@ import useVideos from "../hooks/useVideos";
 
 const App = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
+  //Call the custom Hook as any other hooks
   const [videos, search] = useVideos("ReactJS");
 
   useEffect(() => {
     setSelectedVideo(videos[0]);
-  }, [videos]);
+  }, [videos]); //Callback when the videos has changed
 
   return (
     <div className="ui container">
