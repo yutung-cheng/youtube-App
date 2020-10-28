@@ -1,14 +1,11 @@
-// Refactoring SearchBar Component from Class Component to Function Component
-
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const SearchBar = ({ onFormSubmit }) => {
-  const [term, setTerm] = useState("");
+  const [term, setTerm] = useState('');
 
-  const onSubmit = e => {
-    e.preventDefault(); //Avoid the whole page refresh when you press the Enter
+  const onSubmit = (event) => {
+    event.preventDefault();
 
-    //TODO: Make sure we call callback form parent component
     onFormSubmit(term);
   };
 
@@ -20,7 +17,7 @@ const SearchBar = ({ onFormSubmit }) => {
           <input
             type="text"
             value={term}
-            onChange={event => setTerm(event.target.value)}
+            onChange={(event) => setTerm(event.target.value)}
           />
         </div>
       </form>
